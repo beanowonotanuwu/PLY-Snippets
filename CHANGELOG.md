@@ -2,8 +2,7 @@
 
 All notable changes to the "ply-snippets" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
+## 1.0.0
+- 12/31/2020 : 3:39 PM CST
 - Initial release
+- Snippet Count -> 16 (1 General, 10 Lexer, 5 Parser)
