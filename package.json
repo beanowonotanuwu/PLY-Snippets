@@ -1,0 +1,21 @@
+{
+    "name": "ply-snippets",
+    "publisher": "huntergsquared",
+    "displayName": "PLY-Snippets",
+    "description": "Fast and useful snippets for the PLY Python Package",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.52.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "python",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}

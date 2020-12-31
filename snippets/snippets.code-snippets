@@ -1,0 +1,121 @@
+{
+    "General - Imports": {
+        "prefix": "ply-gen-imports",
+        "body": [
+            "import ply.lex as lex",
+            "import ply.yacc as yacc"
+        ],
+        "description": "Standard PLY Imports"
+    }, "Lexer - Token - Simple": {
+        "prefix": "ply-tok-simp",
+        "body": "t_TOKEN_NAME = r'regex-string'",
+        "description": "Example of a simple token"
+    }, "Lexer - Token - Comlpex": {
+        "prefix": "ply-tok-comp",
+        "body": [
+            "def t_EXAMPLE(t):",
+            "    r'regex-string'",
+            "    t.type = 'EXAMPLE_TOKEN'",
+            "    return t"
+        ],
+        "description": "Example of a complex token"
+    }, "Lexer - Token - Float": {
+        "prefix": "ply-tok-float",
+        "body": [
+            "def t_FLOAT(t):",
+            "    r'\\d+\\.\\d+'",
+            "    t.value = float(t.value)",
+            "    return t"
+        ],
+        "description": "Example of float token for lexer"
+    }, "Lexer - Token - Integer": {
+        "prefix": "ply-tok-int",
+        "body": [
+            "def t_INTEGER(t):",
+            "    r'\\d+'",
+            "    t.value = int(t.value)",
+            "    return t"
+        ],
+        "description": "Example of integer token for lexer"
+    }, "Lexer - Token - String": {
+        "prefix": "ply-tok-str",
+        "body": [
+            "def t_STRING(t):",
+            "   r'\"([^\"]|\\\")*\"'",
+            "   t.type = 'STRING'",
+            "   return t"
+        ],
+        "description": "Example of string token lexer"
+    }, "Lexer - Token - Ignored": {
+        "prefix": "ply-tok-ignore",
+        "body": "t_ignore = ' '",
+        "description": "Example of a t_ignore rule"
+    }, "Lexer - Token - Newline": {
+        "prefix": "ply-tok-newline",
+        "body": [
+            "def t_newline(t):",
+            "    r'\\n+'",
+            "    t.lexer.lineno += len(t.value)"
+        ],
+        "description": "Example of a t_newline rule"
+    }, "Lexer - Literals": {
+        "prefix": "ply-lex-literals",
+        "body": "literals = []",
+        "description": "PLY Literals list"
+    }, "Lexer - Error Handler": {
+        "prefix": "ply-lex-error",
+        "body": [
+            "def t_error(t):",
+            "    print('error-msg')",
+            "    t.lexer.skip(1)"
+        ],
+        "description": "Error handler for lexer"
+    }, "Lexer - Token List": {
+        "prefix": "ply-lex-lst",
+        "body": [
+            "tokens = [",
+            "    \"TOKEN1\",",
+            "    \"TOKEN2\"",
+            "]"
+        ],
+        "description": "Token List"
+    }, "Parser - Precedence": {
+        "prefix": "ply-yacc-precedence",
+        "body": [
+            "precedence = (",
+            "    ('left', 'OPERATOR_1', 'OPERATOR_2'),",
+            "    ('right', 'OPERATOR_1', 'OPERATOR_2'),",
+            "    ('nonasoc', 'OPERATOR_1', 'OPERATOR_2')",
+            ")"
+        ],
+        "description": "Example of precedence special variable"
+    }, "Parser - Rule": {
+        "prefix": "ply-yacc-rule",
+        "body": [
+            "def p_rule(p):",
+            "    '''",
+            "    rule : OPERATOR PLUS OPERATOR",
+            "         | OPERATOR MINUS OPERATOR",
+            "    '''",
+            "    p[0] = ..."
+        ],
+        "description": "Basic components of a parser rule"
+    }, "Parser - Empty": {
+        "prefix": "ply-yacc-empty",
+        "body": [
+            "def p_empty(p):",
+            "    '''",
+            "    empty :",
+            "    '''",
+            "    p[0] = None"
+        ],
+        "description": "Example of a rule that evaluates out to None"
+    }, "Parser - Error Handler": {
+        "prefix": "ply-yacc-error",
+        "body": "def p_error_(p): pass",
+        "description": "Barebones of error handler for parsing"
+    }, "Parser - Parse Line": {
+        "prefix": "ply-yacc-ln",
+        "body": "parser.parse(${0:\"string to parse\"})"
+    }
+}
