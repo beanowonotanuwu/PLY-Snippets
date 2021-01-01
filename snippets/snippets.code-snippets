@@ -48,7 +48,7 @@
         "description": "Example of string token lexer"
     }, "Lexer - Token - Ignored": {
         "prefix": "ply-tok-ignore",
-        "body": "t_ignore = ' '",
+        "body": "t_ignore = r' '",
         "description": "Example of a t_ignore rule"
     }, "Lexer - Token - Newline": {
         "prefix": "ply-tok-newline",
@@ -116,6 +116,6 @@
         "description": "Barebones of error handler for parsing"
     }, "Parser - Parse Line": {
         "prefix": "ply-yacc-ln",
-        "body": "parser.parse(${0:\"string to parse\"})"
+        "body": "parser.parse(\"${0:string to parse}\")"
     }
 }
